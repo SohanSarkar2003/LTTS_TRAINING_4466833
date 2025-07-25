@@ -2,7 +2,7 @@
 ## 📷 Project Images
 
 ### image from Folder 1
-![Agile_GreatLearning_4466833](Agile_GreatLearning/Agile_GreatLearning_4466833.jpg)
+![Agile_GreatLearning_4466833](Agile_GreatLearning/Agile_GreatLearning_4466833)
 
 ### age from Folder 2
 ![Git_CodeSignal](Git_CodeSignal/Git_CodeSignal.jpg)
