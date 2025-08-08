@@ -42,17 +42,17 @@ char* pangrams(char* s) {
     for (int i = 0; s[i] != '\0'; i++) {
         char lower_char = tolower(s[i]);
         if (lower_char >= 'a' && lower_char <= 'z') {
-            int bit_position = lower_char - 'a';
-            mask |= (1 << bit_position);
+            int bit_pos = lower_char - 'a';
+            mask |= (1 << bit_pos);
         }
     }
     int all_letters_mask = (1 << 26) - 1;
-    static char* result_pangram = "pangram";
-    static char* result_not_pangram = "not pangram";
+    static char* res_pangram = "pangram";
+    static char* resnot_pangram = "not pangram";
     if (mask == all_letters_mask) {
-        return result_pangram;
+        return res_pangram;
     } else {
-        return result_not_pangram;
+        return resnot_pangram;
     }
 }
 

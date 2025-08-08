@@ -24,14 +24,14 @@ int parse_int(char*);
  */
 
 int diagonalDifference(int arr_rows, int arr_columns, int** arr) {
-    int primary_sum = 0;
+    int primarysum = 0;
     int secondary = 0;
     int n = arr_rows;
     for ( int i = 0 ; i < n ; i++){
-        primary_sum += arr[i][i];
+        primarysum += arr[i][i];
         secondary += arr[i][n - 1 - i];
     }
-    return abs(primary_sum - secondary);
+    return abs(primarysum - secondary);
 
 }
 
