@@ -40,24 +40,24 @@ char* readline();
 char* timeConversion(char* s) {
     int hh = (s[0] - '0') * 10 + (s[1] - '0');
     if (s[8] == 'P') {
-        if (hour != 12) {
-            hour += 12;
+        if (hh != 12) {
+            hh += 12;
         }
     }
     else {
-        if (hour == 12) {
-            hour = 0;
+        if (hh == 12) {
+            hh = 0;
         }
     }
 
-    static char result_time[9];
-    result_time[0] = (hour / 10) + '0';
-    result_time[1] = (hour % 10) + '0';
-    strncpy(result_time + 2, s + 2, 6);
+    static char finaltime[9];
+    finaltime[0] = (hh / 10) + '0';
+    finaltime[1] = (hh % 10) + '0';
+    strncpy(finaltime + 2, s + 2, 6);
 
-    result_time[8] = '\0';
+    finaltime[8] = '\0';
 
-    return result_time;
+    return finaltime;
 }
 
 int main()

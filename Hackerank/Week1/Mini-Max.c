@@ -16,47 +16,47 @@ char** split_string(char*);
 
 int parse_int(char*);
 
-
-
 /*
- * Complete the 'findMedian' function below.
+ * Complete the 'miniMaxSum' function below.
  *
- * The function is expected to return an INTEGER.
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
-int compare_integers(const void*a , const void *b)
-{
-    return (*(const int*)a - *(const int*)b);
-}
 
-int findMedian(int arr_count, int* arr) {
-    qsort(arr , arr_count , sizeof(int), compare_integers);
-    int middle_index = arr_count / 2;
-    return arr[middle_index];
+void miniMaxSum(int arr_count, int* arr) {
+    long long sum = 0;
+    long long min_val = arr[0];
+    long long max_val = arr[0];
+    for(int i = 0; i< arr_count ; i++){
+        sum += arr[i];
+        if (arr[i] < min_val){
+            min_val = arr[i];
+        }
+        if (arr[i]>max_val){
+            max_val = arr[i];
+        }
+    }
+    long long min_sum = sum - max_val;
+    long long max_sum = sum - min_val;
+    printf("%lld %lld\n",min_sum , max_sum);
+    
+    
 
 }
 
 int main()
 {
-    FILE* fptr = fopen(getenv("OUTPUT_PATH"), "w");
-
-    int n = parse_int(ltrim(rtrim(readline())));
 
     char** arr_temp = split_string(rtrim(readline()));
 
-    int* arr = malloc(n * sizeof(int));
+    int* arr = malloc(5 * sizeof(int));
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < 5; i++) {
         int arr_item = parse_int(*(arr_temp + i));
 
         *(arr + i) = arr_item;
     }
 
-    int result = findMedian(n, arr);
-
-    fprintf(fptr, "%d\n", result);
-
-    fclose(fptr);
+    miniMaxSum(5, arr);
 
     return 0;
 }
